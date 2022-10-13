@@ -255,6 +255,8 @@ jobs:
           name: Run migrations
           command: |
             cd backend
+            npm cache clean –force
+            rm -rf node_modules
             npm install
             npm audit fix --audit-level=critical --force
             npm run migrations > migrations_dump.txt
