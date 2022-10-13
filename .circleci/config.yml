@@ -400,7 +400,7 @@ workflows:
           requires: [run-migrations]
       - deploy-backend:
           requires: [run-migrations]
-      -smoke-test:
+      - smoke-test:
           requires: [test-backend, test-frontend, deploy-frontend, deploy-backend]
 #      - cloudfront-update
 #      -cleanup
