@@ -256,7 +256,6 @@ jobs:
           command: |
             cd backend
             npm install --no-audit
-
       - run:
           name: Send migration status to kvdb.io
           command: |
