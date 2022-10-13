@@ -6,10 +6,10 @@ URL to S3 Bucket
 [URL02] ==> http://udapeople-569ea02.s3-website-us-east-1.amazonaws.com/#/employees
 
 URL to  CloudFront distribution
-URL03  ==> http://d3s9dw944bj8k2.cloudfront.net/
+URL03  ==> https://d3s9dw944bj8k2.cloudfront.net
 
 URL to backend
-URL04  ==> http://3.91.61.159:3030/api/status/
+URL04  ==> http://3.92.211.239:3030/api/status
 
 URL to Prometheus
 URL05 ==>  http://ec2-57-128-20-213.us-east-1.compute.amazonaws.com:9090
