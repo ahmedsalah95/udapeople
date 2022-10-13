@@ -171,12 +171,14 @@ jobs:
               --output text >> inventory
               cat inventory
       - persist_to_workspace:
-          root: .
+          root: ~/
           paths:
-            - .circleci/ansible/inventory
+            - project/.circleci/ansible/inventory.txt
       - destroy_environment:
           id: ${CIRCLE_WORKFLOW_ID:0:7}
           when: on_fail
+
+
 
   configure-infrastructure:
     docker:
@@ -381,7 +383,6 @@ jobs:
           id: ${CIRCLE_WORKFLOW_ID:0:7}
           when: on_fail
 
-
   cleanup:
     docker:
       - image: amazon/aws-cli
@@ -427,8 +428,10 @@ workflows:
           requires: [build-frontend]
       - scan-backend:
           requires: [build-backend]
-#      - deploy-infrastructure:
-#          requires: [test-backend, test-frontend]
+
+      - deploy-infrastructure:
+          requires: [test-backend, test-frontend]
+
 #      - configure-infrastructure:
 #          requires: [deploy-infrastructure]
 #      - run-migrations:

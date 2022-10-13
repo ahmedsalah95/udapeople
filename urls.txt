@@ -1,0 +1,15 @@
+
+URl to GitHub repository
+URL01 ==> https://github.com/ahmedsalah95/udapeople
+
+URL to S3 Bucket
+URL02 ==> http://udapeople-ahutzqmcxx.s3-website.us-east-1.amazonaws.com
+
+URL to  CloudFront distribution
+URL03  ==> http://d33uam22krq9za4.cloudfront.net
+
+URL to EC2
+URL04  ==> http://ec2-57-128-20-213.us-east-1.compute.amazonaws.com:3030/
+
+URL to Prometheus
+URL05 ==>  http://ec2-57-128-20-213.us-east-1.compute.amazonaws.com:9090
