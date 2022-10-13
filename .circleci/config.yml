@@ -46,6 +46,34 @@ commands:
             fi
           when: << parameters.when >>
 jobs:
+
+  install-backend-dependencies:
+    executor: node
+    steps:
+      - checkout
+      - run:
+          name: npm install
+          working_directory: ./backend
+          command: ls -la && npm install
+      - persist_to_workspace:
+          root: ~/
+          paths:
+            - project/backend/node_modules
+
+
+  install-frontend-dependencies:
+    executor: node
+    steps:
+      - checkout
+      - run:
+          name: npm install
+          working_directory: ./frontend
+          command: ls -la && npm install
+      - persist_to_workspace:
+          root: ~/
+          paths:
+            - project/frontend/node_modules
+
   build-frontend:
     docker:
       - image: circleci/node:13.8.0
@@ -186,7 +214,7 @@ jobs:
     steps:
       - checkout
       - add_ssh_keys:
-          fingerprints: [ "06:55:19:5c:75:9c:0c:fa:5e:f0:ed:c4:2b:35:ec:76" ]
+          fingerprints: [ "73:10:29:b5:5c:be:96:43:66:90:c6:72:4e:bf:60:87" ]
       - attach_workspace:
           at: .
       - run:
