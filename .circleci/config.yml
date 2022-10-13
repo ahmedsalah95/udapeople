@@ -229,8 +229,8 @@ jobs:
           command: |
             pwd &&
             ls -la
-            cat inventory
-            ansible-playbook -i inventory configure-server.yml
+            cat inventory.txt
+            ansible-playbook -i inventory.txt configure-server.yml
       - destroy_environment:
             id: ${CIRCLE_WORKFLOW_ID:0:7}
             when: on_fail
@@ -446,8 +446,12 @@ jobs:
 workflows:
   default:
     jobs:
-      - build-frontend
-      - build-backend
+      - install-backend-dependencies
+      - install-frontend-dependencies
+      - build-frontend:
+          requires: [install-frontend-dependencies]
+      - build-backend:
+          requires: [install-backend-dependencies]
       - test-frontend:
           requires: [build-frontend]
       - test-backend:
