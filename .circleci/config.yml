@@ -453,4 +453,4 @@ workflows:
           requires: [test-backend, test-frontend, deploy-frontend, deploy-backend]
 
       - cloudfront-update
-      -cleanup
+      - cleanup
