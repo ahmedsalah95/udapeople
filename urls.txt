@@ -9,7 +9,7 @@ URL to  CloudFront distribution
 URL03  ==> https://d3s9dw944bj8k2.cloudfront.net
 
 URL to backend
-URL04  ==> http://3.92.211.239:3030/api/status
+URL04  ==> http://44.211.221.139:3030/api/status
 
 URL to Prometheus
 URL05 ==>  http://ec2-57-128-20-213.us-east-1.compute.amazonaws.com:9090
